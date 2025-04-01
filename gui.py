@@ -34,7 +34,6 @@ class GUI:
         self.app.geometry(f"{self.width}x{self.height}")
         self.app.title(self.title)
 
-        # configure grid layout (4x4)
         self.app.grid_columnconfigure(1, weight=1)
         self.app.grid_columnconfigure((2, 3), weight=0)
         self.app.grid_rowconfigure((0, 1, 2), weight=1)
