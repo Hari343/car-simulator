@@ -10,14 +10,14 @@ refer the "Building the application" section below.*
 
 Create a python venv and activate it
 
-Windows:
+*Windows:*
 
 ```commandline
 python -m venv venv
 venv\Scripts\activate
 ```
 
-Linux: 
+*Linux:*
 
 ```bash
 python -m venv venv
