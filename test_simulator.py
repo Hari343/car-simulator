@@ -86,6 +86,20 @@ def main():
     assert not simulator.completed_cars
     assert simulator.crashed_cars[(500, 499)] == [("Koensigg CCXR", 1_000), ("Pagani Zonda", 1_000)]
 
+    # Scenario 7:
+    # grid: 1000 x 1000
+    # car: Koensigg CCXR init_pos: 0, 0 direction: N Going straight till boundary and turning right
+    # car: Pagani Zonda init_pos: 999, 999 direction: S Going straight till boundary and turning right
+    # results: both should not crash
+    simulator.add("Koensigg CCXR", (0, 0), "N",
+                  "F" * 999 + "R" + "F" * 999)
+    simulator.add("Pagani Zonda", (999, 999), "S",
+                  "F" * 999 + "R" + "F" * 999)
+    simulator.run()
+    assert not simulator.crashed_cars
+    assert simulator.completed_cars[(999, 999)] == ("Koensigg CCXR", 90)
+    assert simulator.completed_cars[(0, 0)] == ("Pagani Zonda", 270)
+
 
 if __name__ == "__main__":
     main()
