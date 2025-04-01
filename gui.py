@@ -175,8 +175,6 @@ class GUI:
             car = car.strip()
         if car:
             self.simulator.remove(car)
-            print(self.original_input)
-            print(car)
             if car in self.original_input:
                 del self.original_input[car]
             self._print_to_console(f"{car} has been removed")
