@@ -50,7 +50,7 @@ you run into any issues.
 To build the app, simply run
 
 ```commandline
-pyinstalller main.py -n car-simulator -w
+pyinstaller main.py -n car-simulator -w
 ```
 
 **Dependencies**
