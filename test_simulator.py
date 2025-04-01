@@ -77,7 +77,7 @@ def main():
     # grid: 1000 x 1000
     # car: Koensigg CCXR init_pos: 0, 0 direction: N Going straight and turning right
     # car: Pagani Zonda init_pos: 999, 999 direction: S Going straight and turning right
-    # results: both should crash
+    # results: both should crash at 500, 499
     simulator.add("Koensigg CCXR", (0, 0), "N",
                   "F" * 499 + "R" + "F" * 999)
     simulator.add("Pagani Zonda", (999, 999), "S",
