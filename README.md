@@ -4,55 +4,22 @@ This is a simulation application for simulating cars driving in a grid.
 
 **Running the application**
 
-*Note: Prebuilt binaries for Windows 11 (x86-64) available in the dist folder. Simply double-click
-the car-simulator.exe in dist/car-simulator/ to start the application. To build the application yourself 
-refer the "Building the application" section below.*
+You need Python 3.11 or higher to run the application. The application requires no external dependencies. Simply run the
+following command to start the application
 
-Create a python venv and activate it
+Once started you would be asked to input the grid size. Enter the grid size in 'x y' format. For example for a 10 x 10
+grid enter 10 10. Then press Enter to show the Main Menu.
 
-*Windows:*
+Main Menu will have the following options:
 
-```commandline
-python -m venv venv
-venv\Scripts\activate
-```
+1. Add Car
+2. Run Simulation
 
-*Linux:*
+Enter the number of the option and press Enter. For example, to add a car to the simulation, type 1 and press Enter.
 
-```bash
-python -m venv venv
-source venv/bin/activate
-```
-Then install the requirements. Please see the Dependencies section for the required external 
-dependencies. *Note: This application doesn't require any dependencies for running in CLI mode.*
+When adding a car, you need to provide a car name, car's initial position and the direction it is facing and the
+movement commands for the car. Follow onscreen prompts to input this information. Once a car is added, you will be redirected
+to the Main Menu. From here you can add another car or start the simulation. 
 
-```commandline
-pip install -r requirements.txt
-```
-Simply run the following command to start the application:
-
-```commandline
-python main.py
-```
-If you want to start the application in CLI mode, run:
-
-```commandline
-python cli.py
-```
-
-**Building the application**
-
-This project uses Pyinstaller to build the app. It should automatically install when 
-you install the requirements. Be aware that pyinstaller requires some additional 
-dependencies in the Linux platform. Refer the official Pyinstaller documentation if 
-you run into any issues. 
-
-To build the app, simply run
-
-```commandline
-pyinstaller main.py -n car-simulator -w
-```
-
-**Dependencies**
-1. Customtkinter: To provide a reasonably modern looking UI (standard tkinter is atrocious)
-2. Pyinstaller: For building
+Once simulation is done results will be displayed. The results will show the cars' position and whether they crashed or not
+during the simulation
