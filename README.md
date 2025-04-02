@@ -23,3 +23,17 @@ to the Main Menu. From here you can add another car or start the simulation.
 
 Once simulation is done results will be displayed. The results will show the cars' position and whether they crashed or not
 during the simulation
+
+**Testing**
+
+To run unittest, simply run:
+
+```commandline
+python -m unittest
+```
+
+To run integration test, run
+
+```commandline
+python integration_test.py
+```
