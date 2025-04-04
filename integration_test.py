@@ -1,7 +1,7 @@
 from runner import Runner
 from views import StartMenuView, StartOverView, MainMenuView, AddCarView, ListCarView, ResultsView, GoodbyeView
 
-_app_command = "python app.py"
+_app_command = "python main.py"
 
 
 def _verify_output(runner: Runner, content: str):
