@@ -99,11 +99,12 @@ class ListCarView(View):
     def __init__(self):
         super()
 
-    def _render(self, cars: dict) -> None:
+    def _render(self, cars: list) -> None:
         degree_direction = {0: "N", 90: "E", 180: "S", 270: "W"}
         print("Your current list of cars are: ")
-        for name, (pos, direction, instructions) in cars.items():
-            print(f"- {name}, {pos} {degree_direction[direction]}, {instructions.decode()}")
+        for car in cars:
+            *pos, direction = car.initial_pos
+            print(f"- {car.name}, {tuple(pos)} {degree_direction[direction]}, {car.instructions}")
 
 
 class ResultsView(View):

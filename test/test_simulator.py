@@ -20,13 +20,14 @@ class TestSimulator(TestCase):
         car = "Car", (5, 4), "E", "LRLRLRLRLRLR"
         self.simulator.add(*car)
         assert len(self.simulator.cars) == 1
-        assert self.simulator.cars["Car"] == [(5, 4), 90, bytearray(car[3], encoding="utf-8")]
+        assert self.simulator.cars[0].name == "Car"
+        assert self.simulator.cars[0].initial_pos == (5, 4, 90)
+        assert self.simulator.cars[0].instructions == "LRLRLRLRLRLR"
 
     def test_run_with_one_car(self):
         car = "Car", (5, 4), "E", "LRLRLRLRLRLR"
         self.simulator.add(*car)
         self.simulator.run()
-        assert not self.simulator.cars
         assert len(self.simulator.completed_cars) == 1
         assert self.simulator.completed_cars[(5, 4)] == ("Car", 90)
 
@@ -43,7 +44,6 @@ class TestSimulator(TestCase):
 
         # same scenario as above but overshoots map boundaries, also verifies Simulator instance's reusability
         self.simulator.add("Pagani Zonda", (500, 0), "N", "F" * 9999)
-        assert len(self.simulator.cars) == 1
         self.simulator.run()
         assert not self.simulator.crashed_cars
         assert len(self.simulator.completed_cars) == 1
